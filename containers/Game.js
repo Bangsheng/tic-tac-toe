@@ -1,18 +1,30 @@
-import React, {PropTypes, Component} from 'react';
-import {connect} from 'react-redux';
+import React, {PropTypes, Component} from 'react'
+import {connect} from 'react-redux'
+import * as actions from '../actions/game'
+import Board from '../components/Board'
+import NewGameButton from '../components/NewGameButton'
 
 class Game extends Component {
   render () {
+    const {game, newGame} = this.props
     return (
-      <div>
+      <div id='game'>
+        <NewGameButton newGame={newGame} />
+        <Board board={game.board} />
       </div>
-    );
+    )
   }
 }
 
-
-function mapStateToProps(state) {
-  return {};
+Game.propTypes = {
+  game: PropTypes.object.isRequired,
+  newGame: PropTypes.func.isRequired
 }
 
-export default connect(mapStateToProps)(Game);
+function mapStateToProps(state) {
+  return {
+    game: state.game
+  }
+}
+
+export default connect(mapStateToProps, actions)(Game)

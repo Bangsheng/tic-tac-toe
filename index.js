@@ -7,7 +7,20 @@ import {createStore, applyMiddleware} from 'redux';
 import rootReducer from './reducers';
 import thunk from 'redux-thunk';
 
-let store = createStore(rootReducer, {}, applyMiddleware(thunk));
+let store = createStore(rootReducer, {
+  game: {
+    player: 1,
+    win: 0,
+    marks: 3,
+    noTileLeft: false,
+    judging: false,
+    board: [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ]
+  }
+}, applyMiddleware(thunk));
 
 render(
   <Provider store={store}>

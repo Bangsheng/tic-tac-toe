@@ -1,32 +1,34 @@
 'use strict';
 
-const express = require('express');
-const app = new express();
+const Express = require('express')
+const app = new Express()
 const port = 3000;
 const isProd = process.env.NODE_ENV === 'production';
 
-if(!isProd) {
+if (!isProd) {
   const webpack = require('webpack');
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
   const config = require('./webpack-dev-config');
   const compiler = webpack(config);
   app.use(webpackDevMiddleware(compiler, {
-      noInfo: true,
-      publicPath: config.output.publicPath
+    noInfo: true,
+    publicPath: config.output.publicPath
   }));
   app.use(webpackHotMiddleware(compiler));
 }
 
+app.use('/public', Express.static('.build/public'));
 
-app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/index.html')
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html')
 });
 
-app.listen(port, function(error) {
-    if (error) {
-        console.error(error)
-    } else {
-        console.info('==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.', port, port)
-    }
+app.listen(port, function (error) {
+  if (error) {
+    console.error(error)
+  } else {
+    console.info('==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.',
+      port, port)
+  }
 });
