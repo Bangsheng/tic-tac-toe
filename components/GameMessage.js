@@ -11,10 +11,18 @@ class GameMessage extends Component {
       player,
       noTileLeft
     } = this.props
+    let curPlayer
+    let winPlayer
+    if(player === 1) {
+      curPlayer = 'X'
+      winPlayer = 'O'
+    } else {
+      curPlayer = 'O'
+      winPlayer = 'X'
+    }
     let message = (
-      <a>Player {player} move!</a>
+      <a>Player {curPlayer} move!</a>
     )
-    let winPlayer = player === 1 ? 2 : 1
     if (win !== 0) {
       message = (
         <a>Player {winPlayer} wins!</a>
