@@ -1,0 +1,24 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "A tic-tac-toe game",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bangsheng/tic-tac-toe.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "tic-tac-toe"
+  ],
+  "author": "Bangsheng Sui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bangsheng/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/Bangsheng/tic-tac-toe#readme"
+}
