@@ -1,10 +1,16 @@
-1. Start development mode
-  npm run dev
+# Start development mode
 
-2. Start production mode
-  npm run build
-  npm start
+```js
+> npm run dev
+```
 
-3. TODO
-  1) add nodemon to development mode
-  2) use pm2 to start server as a service
+# Start production mode
+
+```js
+> npm run build
+> npm start
+```
+
+# TODO
+  - add nodemon to development mode
+  - use pm2 to start server as a service
