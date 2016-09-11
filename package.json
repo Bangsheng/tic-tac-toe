@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node server.js",
+    "build": "cross-env NODE_ENV=production gulp build",
     "dev": "cross-env NODE_ENV=development gulp dev",
     "test": "cross-env NODE_ENV=test gulp test",
     "lint": "gulp eslint"
@@ -56,6 +57,7 @@
     "run-sequence": "^1.2.2",
     "sinon": "^1.17.5",
     "webpack-dev-middleware": "^1.7.0",
-    "webpack-hot-middleware": "^2.12.2"
+    "webpack-hot-middleware": "^2.12.2",
+    "webpack-stream": "^3.2.0"
   }
 }

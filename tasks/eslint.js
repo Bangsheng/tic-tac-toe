@@ -17,7 +17,7 @@ const config = {
 }
 
 gulp.task('eslint', () => {
-  gulp.src(config.src)
+  return gulp.src(config.src)
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())

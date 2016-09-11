@@ -20,11 +20,11 @@ gulp.task('less:prod', () => {
         removeAll: true
       }
     }))
-    .pipe(gulp.dest(config.dest));
-});
+    .pipe(gulp.dest(config.dest))
+})
 
 gulp.task('less:dev', () => {
   watch(config.src[0], function () {
-    gulp.runSequence('less:prod');
-  });
-});
+    gulp.runSequence('less:prod')
+  })
+})
