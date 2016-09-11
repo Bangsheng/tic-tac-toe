@@ -1,3 +1,4 @@
+'use strict'
 const gulp = require('gulp')
 const cssnano = require('gulp-cssnano')
 const less = require('gulp-less')

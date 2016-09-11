@@ -3,7 +3,7 @@
 const assert = require('assert')
 const judge = require('../../libs/judge')
 
-describe('judge hasWon', () => {
+describe('libs/judge hasWon', () => {
   it('should return false when empty board', () => {
     let game = {
       position: [0, 0],
@@ -113,7 +113,7 @@ describe('judge hasWon', () => {
   })
 })
 
-describe('judge noTileLeft', () => {
+describe('libs/judge noTileLeft', () => {
   it('should return false if there is tiles left', () => {
     let board = [
       [1, 0, 2],

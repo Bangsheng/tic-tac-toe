@@ -3,7 +3,7 @@ import React, {PropTypes, Component} from 'react'
 class NewGameButton extends Component {
 
   render() {
-    const {newGame} = this.props;
+    const {newGame} = this.props
     return (
       <input id='new-game-button'
         type='button'
@@ -15,6 +15,6 @@ class NewGameButton extends Component {
 
 NewGameButton.propTypes = {
   newGame: PropTypes.func.isRequired
-};
+}
 
 export default NewGameButton

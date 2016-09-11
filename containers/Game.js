@@ -3,14 +3,16 @@ import {connect} from 'react-redux'
 import * as actions from '../actions/game'
 import Board from '../components/Board'
 import NewGameButton from '../components/NewGameButton'
+import GameMessage from '../components/GameMessage'
 
 class Game extends Component {
-  render () {
-    const {game, newGame} = this.props
-    return (
+  render() {
+    const {game, playerMove, newGame} = this.props
+    return(
       <div id='game'>
         <NewGameButton newGame={newGame} />
-        <Board board={game.board} />
+        <Board board={game.board} onPlayerMove={playerMove} />
+        <GameMessage win={game.win} player={game.player} noTileLeft={game.noTileLeft} />
       </div>
     )
   }
@@ -18,6 +20,7 @@ class Game extends Component {
 
 Game.propTypes = {
   game: PropTypes.object.isRequired,
+  playerMove: PropTypes.func.isRequired,
   newGame: PropTypes.func.isRequired
 }
 

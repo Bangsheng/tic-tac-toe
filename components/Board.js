@@ -4,14 +4,12 @@ import Row from './Row'
 class Board extends Component {
 
   renderRows () {
-    const {board} = this.props
-    let tileRows = board.map((row, i) => {
+    const {board, onPlayerMove} = this.props
+    return board.map((row, i) => {
       return (
-        <Row key={i} row={row} />
+        <Row key={i} row={row} rowNumber={i} onClick={onPlayerMove} />
       )
     })
-
-    return tileRows
   }
 
   render() {
@@ -24,7 +22,8 @@ class Board extends Component {
 }
 
 Board.propTypes = {
-  board: PropTypes.array.isRequired
+  board: PropTypes.array.isRequired,
+  onPlayerMove: PropTypes.func.isRequired
 }
 
 export default Board

@@ -4,15 +4,15 @@ import Tile from './Tile'
 class Row extends Component {
 
   renderTiles () {
-    const {row} = this.props
-    let tiles = []
+    const {row, rowNumber, onClick} = this.props
 
-    for(let i = 0; i < row.length; i++) {
-      tiles.push(
-        <Tile key={i} />
+    return row.map((tile, i) => {
+      return (
+        <Tile key={i} player={row[i]} position={[rowNumber, i]} onClick={() => {
+          onClick([rowNumber, i])
+        }} />
       )
-    }
-    return tiles
+    })
   }
 
   render() {
@@ -25,7 +25,9 @@ class Row extends Component {
 }
 
 Row.propTypes = {
-  row: PropTypes.array.isRequired
+  row: PropTypes.array.isRequired,
+  rowNumber: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 export default Row

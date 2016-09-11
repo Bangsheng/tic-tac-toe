@@ -1,3 +1,4 @@
+'use strict'
 const gulp = require('gulp')
 const mocha = require('gulp-mocha')
 const babel = require('babel-core/register')
