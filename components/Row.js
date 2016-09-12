@@ -8,7 +8,7 @@ class Row extends Component {
 
     return row.map((tile, i) => {
       return (
-        <Tile key={i} player={row[i]} position={[rowNumber, i]} onClick={() => {
+        <Tile key={i} player={row[i]} onClick={() => {
           onClick([rowNumber, i])
         }} />
       )
