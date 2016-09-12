@@ -41,6 +41,24 @@ describe('actions/game', () => {
       type: types.NEW_GAME
     }])
   })
+  it('click on a clicked tile', () => {
+    const store = mockStore({
+      game: {
+        player: 1,
+        win: 0,
+        noTileLeft: false,
+        marks: 3,
+        judging: false,
+        board: [
+          [1, 2, 0],
+          [0, 0, 0],
+          [0, 0, 0]
+        ]
+      }
+    })
+    store.dispatch(actions.playerMove([0, 0]))
+    assert.deepEqual(store.getActions(), [])
+  })
   it('player1 click no win', () => {
     const store = mockStore({
       game: {
